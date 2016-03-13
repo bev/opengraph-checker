@@ -1,10 +1,11 @@
-/* File: gulpfile.js */
-
-// grab our gulp packages
 var gulp  = require('gulp'),
     gutil = require('gulp-util');
 
-// create a default task and just log a message
+// Gulp Tasks
 gulp.task('default', function() {
   return gutil.log('Gulp is running!')
+});
+
+gulp.task('hello', function() {
+  console.log('Hello World');
 });
