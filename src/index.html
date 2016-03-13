@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example that shows off a responsive product landing page.">
+
+    <title>Open Graph Checker</title>
+
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+    <!--<![endif]-->
+
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/marketing-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="css/marketing.css">
+    <!--<![endif]-->
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-fixed-top navbar-light bg-faded">
+
+    <a class="navbar-brand" href="">Open Graph Checker</a>
+
+    <ul class="nav navbar-nav">
+        <li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Tag definitions</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Author</a></li>
+    </ul>
+
+</nav>
+
+<div class="site-wrapper">
+    <div class="site-wrapper-inner">
+        <div class="cover-container">
+            <div class="inner cover">
+                <h1 class="splash-head">Open Graph Checker</h1>
+                <ol style="display: none;">
+                    <li>Functionality - jQuery, Angular</li>
+                    <li>Theme - Bootstrap / Pure</li> 
+                    <li>Package management - npm</li>
+                    <li>Task automation - gulp - jshint, uglify, gulp-sass, pleeease, csscomb, csslint</li>
+                </ol>
+                <p class="lead">
+                    Enter test URL:
+                </p>
+                <form class="form-group row">
+                    <div class="col-md-9">
+                        <input class="form-control form-control-lg" id="url" type="url" name="url" ng-model="url" placeholder="Paste your URL">
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Get Started</button>
+                    </div>
+                </form>                
+
+
+
+                <script>
+                    $('button').click(function(event) {
+                        var url = $('#url').val();
+                        $.ajax({ url: url, success: function(data) { console.log(data); } });
+                    });
+                </script>
+
+                <div id="results">
+                    <p>Results for {{url}}</p>
+                    <br>
+
+                    <div class="row">
+                      <div class="col-md-6 col-md-offset-3">
+                        <div class="card clearfix">
+                            <img data-src="..." class="col-md-3" alt="OG image">
+                            <div class="card-block col-md-9">
+                                <h4 class="card-title">OG Title</h4>
+                                <p class="card-text">OG Description Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="text-muted">OG Url</p>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="main" style="display: none;">
+                        <p>og:title - The title of your object as it should appear within the graph, e.g., "The Rock".</p>
+                        <p>og:type - The type of your object, e.g., "video.movie". Depending on the type you specify, other properties may also be required.</p>
+                        <p>og:image - An image URL which should represent your object within the graph.</p>
+                        <p>og:url - The canonical URL of your object that will be used as its permanent ID in the graph, e.g., "http://www.imdb.com/title/tt0117500/".</p>                        
+                    </div>
+
+
+                    <table class="table table-striped table-bordered table-hover" style="display: none;">
+                        <tr>
+                            <th scope="row">audio</th>
+                            <td>A URL to an audio file to accompany this object.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">description</th>
+                            <td>A one to two sentence description of your object.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">determiner</th>
+                            <td>The word that appears before this object's title in a sentence. An enum of (a, an, the, "", auto). If auto is chosen, the consumer of your data should chose between "a" or "an". Default is "" (blank).</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">locale</th>
+                            <td>The locale these tags are marked up in. Of the format language_TERRITORY. Default is en_US.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">locale:alternate</th>
+                            <td>An array of other locales this page is available in.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">site_name</th>
+                            <td>If your object is part of a larger web site, the name which should be displayed for the overall site. e.g., "IMDb".</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">video</th>
+                            <td>A URL to a video file that complements this object.</td>
+                        </tr>
+                    </table>
+                    <div class="others" style="display: none;">
+                        <p>og:audio - A URL to an audio file to accompany this object.</p>
+                        <p>og:description - A one to two sentence description of your object.</p>
+                        <p>og:determiner - The word that appears before this object's title in a sentence. An enum of (a, an, the, "", auto). If auto is chosen, the consumer of your data should chose between "a" or "an". Default is "" (blank).</p>
+                        <p>og:locale - The locale these tags are marked up in. Of the format language_TERRITORY. Default is en_US.</p>
+                        <p>og:locale:alternate - An array of other locales this page is available in.</p>
+                        <p>og:site_name - If your object is part of a larger web site, the name which should be displayed for the overall site. e.g., "IMDb".</p>
+                        <p>og:video - A URL to a video file that complements this object.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
