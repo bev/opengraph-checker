@@ -1,0 +1,32 @@
+{
+  "name": "open-graph-checker",
+  "version": "1.0.0",
+  "description": "Check your open graph configuration for your webpages with a simple interface.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.2",
+    "font-awesome": "^4.5.0",
+    "jquery": "^2.2.0",
+    "modernizr": "^3.3.1",
+    "normalize.css": "^3.0.3",
+    "purecss": "^0.6.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-csscomb": "^3.0.6",
+    "gulp-csslint": "^0.2.2",
+    "gulp-jshint": "^2.0.0",
+    "gulp-ruby-sass": "^2.0.6",
+    "gulp-uglify": "^1.5.3",
+    "gulp-util": "^3.0.7",
+    "jshint": "^2.9.1"
+  },
+  "author": "Beverly Cheak",
+  "email": "beverly.cheak@hotmail.com",
+  "url": "http://www.beverlycheak.com",
+  "license": "ISC"
+}
