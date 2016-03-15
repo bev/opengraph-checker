@@ -7,6 +7,7 @@ $myMetas = array();
 function file_get_contents_curl($url) {
     $ch = curl_init();
 
+	curl_setopt($ch, CURLOPT_CAINFO, dirname(__FILE__)."/cacert.pem");
     curl_setopt($ch, CURLOPT_HEADER, 0);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_URL, $url);
