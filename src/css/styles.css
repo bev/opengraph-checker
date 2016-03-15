@@ -1,16 +1,44 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,900);
 
+/*
+ * Base structure
+ */
+html,
+body {
+  height: 100%;
+  background: radial-gradient(ellipse at bottom, #cc95c2 0%, #ba73ad 100%);
+  /* background-color: #b163a3; */
+
+}
+body {
+  color: #2d2d2d;
+  text-align: center;
+}
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*
+ * Globals
+ */
 html, body {
   height: 100%;
   margin: 0;
   font-family: Lato;
   color: white;
 }
-
-
 h1 ~ span, p { color: #2d2d2d; }
-.thin { font-weight: 300; }
-.thick { font-weight: 900; }
 
 table {
   color: #2d2d2d;
@@ -24,10 +52,21 @@ table {
 .card {
   text-align: left;
 }
-/*
- * Globals
- */
 
+h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    border: 3px solid white;
+    padding: 1em 1.6em;
+    font-weight: 100;
+    border-radius: 5px;
+    line-height: 1em;
+}
+.inner {
+  padding: 2rem;
+}
 /* Links */
 a,
 a:focus,
@@ -44,45 +83,6 @@ a:hover {
   background-color: #fff;
   border: .05rem solid #fff;
 }
-
-
-/*
- * Base structure
- */
-
-html,
-body {
-  height: 100%;
-  background-color: #B163A3;
-}
-body {
-  color: #2d2d2d;
-  text-align: center;
-}
-
-/* Extra markup and styles for table-esque vertical and horizontal centering */
-.site-wrapper {
-  display: table;
-  width: 100%;
-  height: 100%; /* For at least Firefox */
-  min-height: 100%;
-  -webkit-box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
-          box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
-}
-.site-wrapper-inner {
-  display: table-cell;
-  vertical-align: top;
-}
-.cover-container {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-/* Padding for spacing */
-.inner {
-  padding: 2rem;
-}
-
 
 /*
  * Header
@@ -106,10 +106,6 @@ body {
 
 
 
-
-/*
- * Affix and center
- */
 
 @media (min-width: 40em) {
   /* Start the vertical centering */
