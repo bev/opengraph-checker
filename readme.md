@@ -1,3 +1,3 @@
-# Open Graph Checker
+# Open Graph Tester
 
-Check your open graph configuration for your webpages with a simple interface.
+Test your open graph configuration for your webpages with a simple interface.

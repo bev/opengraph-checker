@@ -11,22 +11,21 @@ var formController = function($scope, $http) {
     // process the form
     $scope.processForm = function() {
         $http({
-            method  : 'POST',
-            url     : '../src/process.php',
-            data    : $.param($scope.formData),  // pass in data as strings
-            headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+            method: 'POST',
+            url:    '../src/process.php',
+            data:   $.param($scope.formData),  // pass in data as strings
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
         })
         .success(function(data) {
             console.log(data);
+            console.log(data.html);
 
-            // if (!data.success) {
-            //     // if not successful, bind errors to error variables
-            //     $scope.url = data.errors.url;
-            // } else {
-            //     // if successful, bind success message to message
-            //     $scope.message = data.message;
-            //                 $scope.url = '';
-            // }
+            if (!data.success) {
+                $scope.errorUrl = data.errors;
+            } else {
+                $scope.result = data.html;
+                $scope.errorUrl = '';
+            }
         });
 
     };

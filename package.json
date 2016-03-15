@@ -1,7 +1,7 @@
 {
-  "name": "opengraph-checker",
+  "name": "opengraph-tester",
   "version": "1.0.0",
-  "description": "Check your open graph configuration for your webpages with a simple interface.",
+  "description": "Test your open graph configuration for your webpages with a simple interface.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
