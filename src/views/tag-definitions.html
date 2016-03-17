@@ -1,47 +1,59 @@
-<table class="table table-striped table-bordered table-hover">
-    <tr>
-        <th scope="row">audio</th>
-        <td>A URL to an audio file to accompany this object.</td>
-    </tr>
-    <tr>
-        <th scope="row">description</th>
-        <td>A one to two sentence description of your object.</td>
-    </tr>
-    <tr>
-        <th scope="row">determiner</th>
-        <td>The word that appears before this object's title in a sentence. An enum of (a, an, the, "", auto). If auto is chosen, the consumer of your data should chose between "a" or "an". Default is "" (blank).</td>
-    </tr>
-    <tr>
-        <th scope="row">locale</th>
-        <td>The locale these tags are marked up in. Of the format language_TERRITORY. Default is en_US.</td>
-    </tr>
-    <tr>
-        <th scope="row">locale:alternate</th>
-        <td>An array of other locales this page is available in.</td>
-    </tr>
-    <tr>
-        <th scope="row">site_name</th>
-        <td>If your object is part of a larger web site, the name which should be displayed for the overall site. e.g., "IMDb".</td>
-    </tr>
-    <tr>
-        <th scope="row">video</th>
-        <td>A URL to a video file that complements this object.</td>
-    </tr>
-</table>
+<div class="inner cover">
+    <h1 class="splash-head">Open Graph Tester</h1>
+    <p class="lead">Tag definitions are courtesy of <a href="http://ogp.me/">http://ogp.me/</a>. Please visit their website for full information.</p>
 
-<div class="main" style="display: none;">
-    <p>og:title - The title of your object as it should appear within the graph, e.g., "The Rock".</p>
-    <p>og:type - The type of your object, e.g., "video.movie". Depending on the type you specify, other properties may also be required.</p>
-    <p>og:image - An image URL which should represent your object within the graph.</p>
-    <p>og:url - The canonical URL of your object that will be used as its permanent ID in the graph, e.g., "http://www.imdb.com/title/tt0117500/".</p>                        
+    <table class="table table-striped table-bordered table-hover">
+        <tr>
+            <th scope="row">Property</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <th scope="row">og:title</th>
+            <td>The title of your object as it should appear within the graph, e.g., "The Rock".</td>
+        </tr>
+        <tr>
+            <th scope="row">og:type</th>
+            <td>The type of your object, e.g., "video.movie". Depending on the type you specify, other properties may also be required.</td>
+        </tr>
+        <tr>
+            <th scope="row">og:image</th>
+            <td>An image URL which should represent your object within the graph.</td>
+        </tr>
+        <tr>
+            <th scope="row">og:url</th>
+            <td>The canonical URL of your object that will be used as its permanent ID in the graph, e.g., "http://www.imdb.com/title/tt0117500/".</td>
+        </tr>
+        <tr>
+            <th scope="row">og:audio</th>
+            <td>A URL to an audio file to accompany this object.</td>
+        </tr>
+        <tr>
+            <th scope="row">og:description</th>
+            <td>A one to two sentence description of your object.</td>
+        </tr>
+        <tr>
+            <th scope="row">og:determiner</th>
+            <td>The word that appears before this object's title in a sentence. An enum of (a, an, the, "", auto). If auto is chosen, the consumer of your data should chose between "a" or "an". Default is "" (blank).</td>
+        </tr>
+        <tr>
+            <th scope="row">og:locale</th>
+            <td>The locale these tags are marked up in. Of the format language_TERRITORY. Default is en_US.</td>
+        </tr>
+        <tr>
+            <th scope="row">og:locale:alternate</th>
+            <td>An array of other locales this page is available in.</td>
+        </tr>
+        <tr>
+            <th scope="row">og:site_name</th>
+            <td>If your object is part of a larger web site, the name which should be displayed for the overall site. e.g., "IMDb".</td>
+        </tr>
+        <tr>
+            <th scope="row">og:video</th>
+            <td>A URL to a video file that complements this object.</td>
+        </tr>
+    </table>
 </div>
-                    
-<div class="others" style="display: none;">
-    <p>og:audio - A URL to an audio file to accompany this object.</p>
-    <p>og:description - A one to two sentence description of your object.</p>
-    <p>og:determiner - The word that appears before this object's title in a sentence. An enum of (a, an, the, "", auto). If auto is chosen, the consumer of your data should chose between "a" or "an". Default is "" (blank).</p>
-    <p>og:locale - The locale these tags are marked up in. Of the format language_TERRITORY. Default is en_US.</p>
-    <p>og:locale:alternate - An array of other locales this page is available in.</p>
-    <p>og:site_name - If your object is part of a larger web site, the name which should be displayed for the overall site. e.g., "IMDb".</p>
-    <p>og:video - A URL to a video file that complements this object.</p>
-</div>
+
+<script>
+    $('a[href="#tags"]').addClass('active');
+</script>
