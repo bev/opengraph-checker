@@ -18,7 +18,8 @@ body {
   height: 100%; /* For at least Firefox */
   min-height: 100%;
   padding: 150px 0 100px;
-  background: radial-gradient(ellipse at bottom, #e5c8e0 0%, #ba73ad 100%);
+  /* background: radial-gradient(ellipse at bottom, #e5c8e0 0%, #ba73ad 100%); */
+  background: radial-gradient(ellipse at center 75%, #c4abe4 0%, #8d60c9 100%);
   /* background-color: #b163a3; */
 }
 .site-wrapper-inner {
@@ -65,8 +66,6 @@ table {
 .card {
   text-align: left;
   color: #2d2d2d;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
 }
 .inner {
   padding: 2rem;
@@ -75,16 +74,17 @@ input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
 .btn-primary {
-    background-color: #1591fb;
-    border-color: #1591fb;
+    background-color: #2d2d2d;
+    border-color: #2d2d2d
 }
 .btn-primary:hover { 
-    background-color: #2598fc;
-    border-color: #2598fc; 
+    background-color: #4d4d4d;
+    border-color: #4d4d4d; 
 }
+.btn-primary:active, .btn-primary:focus,
 .btn-primary:active:hover, .btn-primary:active:focus, .btn-primary:active.focus, .btn-primary.active:hover, .btn-primary.active:focus, .btn-primary.active.focus { 
-    background-color: #40a6fd;
-    border-color: #40a6fd
+    background-color: #4f4f4f;
+    border-color: #4f4f4f
 }
 /* Links */
 a,

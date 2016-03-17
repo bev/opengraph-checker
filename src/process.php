@@ -38,7 +38,7 @@ function getMetaTags($url) {
 		    $myMetas[$property] = $content;
 		}
 	} else {
-		$myMetas['Error'] = 'Could not find an Open Graph meta tag.';
+		$myMetas['Warning'] = 'Sorry, would not find an Open Graph meta tag. Your website may have timed out, or your meta tag format may be incorrect. Use <meta property=""> instead of <meta name="">.';
 		// $myMetas = 'Could not find an Open Graph meta tag.';
 	}
 	// var_dump($myMetas);
