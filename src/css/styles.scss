@@ -69,6 +69,9 @@ table {
 .card {
 	text-align: left;
 	color: $textColour;
+	a:hover {
+		color: $textColour * 2;
+	}
 }
 .inner {
 	padding: 2rem;
