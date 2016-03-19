@@ -1,9 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    
     <meta name="description" content="Test your open graph configuration for your webpages with a simple interface.">
+
+    <meta property="og:site_name" content="Open Graph Tester" />
+    <meta property="og:title" content="Open Graph Tester" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.beverlycheak.com/opengraphtester" />
+    <meta property="og:description" content="Test your open graph configuration for your webpages with a simple interface.">
+    <meta property="og:image" content="http://www.beverlycheak.com/opengraphtester/img/icon.png" />
+
+    <link rel="icon" type="image/png" href="img/favicon.png">
 
     <title>Open Graph Tester</title>
 
@@ -11,7 +23,8 @@
     <link rel="stylesheet" href="css/styles.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.min.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script src="js/formapp.js"></script>
 
@@ -20,62 +33,19 @@
 
 <nav class="navbar navbar-fixed-top navbar-dark">
 
-    <a class="navbar-brand" href="">Open Graph Tester</a>
+    <a class="navbar-brand" href="#">Open Graph Tester</a>
 
     <ul class="nav navbar-nav">
-        <li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Tag definitions</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Author</a></li>
+        <li class="nav-item"><a href="#tags" class="nav-link">Tag definitions</a></li>
+        <li class="nav-item"><a href="https://github.com/bev/opengraph-tester" class="nav-link" target="_blank">GitHub</a></li>
+        <li class="nav-item"><a href="http://www.beverlycheak.com" class="nav-link" target="_blank">@bev</a></li>
     </ul>
 
 </nav>
 
-<div class="site-wrapper" ng-controller="formController">
+<div class="site-wrapper" ng-controller="mainController">
     <div class="site-wrapper-inner">
-        <div class="cover-container">
-            <div class="inner cover">
-                <h1 class="splash-head">Open Graph Tester</h1>
-                <p class="lead">Enter a URL:</p>
-                <form class="form-group row" ng-submit="processForm()">
-                    <div class="col-md-9" ng-class="{ 'has-error' : errorUrl }">
-                        <input class="form-control form-control-lg" id="url" type="url" name="url" ng-model="formData.url" placeholder="http://">
-                        <span class="help-block" ng-show="errorUrl">{{ errorUrl }}</span>
-                    </div>
-                    <div class="col-md-3">
-                        <button class="btn btn-primary btn-lg btn-block" type="submit">Test</button>
-                    </div>
-                </form>
-                <!-- <pre>
-                    {{formData}}
-                </pre> -->
-
-                <div id="results" ng-show="result">
-                    <!-- <div class="well" ng-show="result">{{ result }}</div> -->
-                    <div class="row" ng-show="result['og:image'] || result['og:site_name'] || result['og:title'] || result['og:description'] || result['og:url']">
-                      <div class="col-md-6 col-md-offset-3">
-                        <div class="card clearfix">
-                            <img data-src="{{ result['og:image'] }}" src="{{ result['og:image'] }}" class="card-block col-md-3" alt="OG image">
-                            <div class="card-block col-md-9">
-                                <h4 class="card-title">
-                                    <span ng-show="result['og:site_name']">{{ result['og:site_name'] }}</span>
-                                    <span ng-show="result['og:site_name'] && result['og:title']"> - </span>
-                                    <span class="text-muted" ng-show="result['og:title']">{{ result['og:title'] }}</span>
-                                </h4>
-                                <p class="card-text" ng-show="result['og:description']">{{ result['og:description'] }}</p>
-                                <a href="{{ result['og:url'] }}" class="text-muted" ng-show="result['og:url']">{{ result['og:url'] }}</a>
-                            </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <table id="others" class="table table-striped table-bordered table-hover">
-                        <tr ng-repeat="(key, data) in result">
-                            <th scope="row">{{key}}</th>
-                            <td>{{data}}</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
+        <div class="cover-container" ng-view>
         </div>
     </div>
 </div>
