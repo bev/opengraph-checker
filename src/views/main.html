@@ -17,25 +17,25 @@
     <div id="results" ng-show="result">
         <!-- <div class="well" ng-show="result">{{ result }}</div> -->
         <div class="row" ng-show="result['og:image'] || result['og:site_name'] || result['og:title'] || result['og:description'] || result['og:url']">
-          <div class="col-md-8 col-md-offset-2">
-          <p class="lead">Your result</p>
-            <div class="card clearfix">
-                <img data-src="{{ result['og:image'] }}" src="{{ result['og:image'] }}" class="card-block col-md-3" alt="OG image">
-                <div class="card-block col-md-9">
-                    <h4 class="card-title">
-                        <span ng-show="result['og:site_name']">{{ result['og:site_name'] }}</span>
-                        <span ng-show="result['og:site_name'] && result['og:title']"> - </span>
-                        <span class="text-muted" ng-show="result['og:title']">{{ result['og:title'] }}</span>
-                    </h4>
-                    <p class="card-text" ng-show="result['og:description']">{{ result['og:description'] }}</p>
-                    <a href="{{ result['og:url'] }}" class="text-muted" ng-show="result['og:url']">{{ result['og:url'] }}</a>
+            <div class="col-md-8 col-md-offset-2">
+                <p class="lead">Result</p>
+                <div class="card clearfix">
+                    <img data-src="{{ result['og:image'] }}" src="{{ result['og:image'] }}" class="card-block col-md-3" alt="OG image">
+                    <div class="card-block col-md-9">
+                        <h4 class="card-title">
+                            <span ng-show="result['og:site_name']">{{ result['og:site_name'] }}</span>
+                            <span ng-show="result['og:site_name'] && result['og:title']"> - </span>
+                            <span class="text-muted" ng-show="result['og:title']">{{ result['og:title'] }}</span>
+                        </h4>
+                        <p class="card-text" ng-show="result['og:description']">{{ result['og:description'] }}</p>
+                        <a href="{{ result['og:url'] }}" class="text-muted" ng-show="result['og:url']">{{ result['og:url'] }}</a>
+                    </div>
                 </div>
             </div>
-          </div>
         </div>
 
         <div class="row">
-            <p class="lead">Detailed results</p>
+            <p class="lead">Detailed result</p>
             <table id="others" class="table table-striped table-bordered table-hover">
                 <tr ng-hide="result['Warning']">
                     <th scope="row">Property</th>
